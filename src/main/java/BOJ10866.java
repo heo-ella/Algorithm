@@ -1,14 +1,13 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Deque;
+import java.io.*;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 public class BOJ10866 {
     public static void main(String[] args) throws IOException {
+        LinkedList<Integer> deque = new LinkedList<>();
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Deque<Integer> deque = new LinkedList<>();
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
 
@@ -22,25 +21,47 @@ public class BOJ10866 {
                     deque.addFirst(Integer.parseInt(input[1]));
                     break;
                 case "pop_front":
-                    System.out.println(deque.isEmpty()?-1:deque.pop());
+                    if(deque.isEmpty()) {
+                        sb.append(-1).append('\n');
+                    }else {
+                        sb.append(deque.pop()).append('\n');
+                    }
                     break;
                 case "pop_back":
-                    System.out.println(deque.isEmpty()?-1:deque.removeLast());
+                    if(deque.isEmpty()) {
+                        sb.append(-1).append('\n');
+                    }else {
+                        sb.append(deque.removeLast()).append('\n');
+                    }
                     break;
                 case "size":
-                    System.out.println(deque.size());
+                    sb.append(deque.size()).append('\n');
                     break;
                 case "empty":
-                    System.out.println(deque.isEmpty()?1:0);
+                    if(deque.isEmpty()) {
+                        sb.append(1).append('\n');
+                    }else {
+                        sb.append(0).append('\n');
+                    }
                     break;
                 case "front":
-                    System.out.println(deque.isEmpty()?-1:deque.peek());
+                    if(deque.isEmpty()) {
+                        sb.append(-1).append('\n');
+                    }else {
+                        sb.append(deque.peek()).append('\n');
+                    }
                     break;
                 case "back":
-                    System.out.println(deque.isEmpty()?-1:deque.peekLast());
+                    if(deque.isEmpty()) {
+                        sb.append(-1).append('\n');
+                    }else {
+                        sb.append(deque.peekLast()).append('\n');
+                    }
                     break;
             }
         }
+        bw.write(sb.toString());
+        bw.flush();
     }
 
 }
