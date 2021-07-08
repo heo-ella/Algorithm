@@ -1,3 +1,5 @@
+package baekjoon.inputoutput;
+
 import java.util.Scanner;
 
 public class BOJ11021 {

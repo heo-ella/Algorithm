@@ -1,3 +1,5 @@
+package baekjoon.inputoutput;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

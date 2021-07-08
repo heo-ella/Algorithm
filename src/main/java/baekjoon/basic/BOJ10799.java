@@ -1,3 +1,5 @@
+package baekjoon.basic;
+
 import java.util.Scanner;
 import java.util.Stack;
 
